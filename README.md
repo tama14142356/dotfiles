@@ -30,6 +30,14 @@ $ sh dotfileslinks.sh
 :call dein#update()
 ```
 
+## yarn nodejs install
+1. npmがすでにある場合、yarnをインストール
+
+```
+$ npm install --save yarn
+```
+
+1. ない場合、検索して、yarnから入れてください
 ## coc設定
 1. nodejs用のnvimパッケージインストール
 ```
