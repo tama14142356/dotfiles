@@ -3,5 +3,5 @@
 setlocal
 del %USERPROFILE%\.gitconfig
 del %USERPROFILE%\.tmux.conf
-rmdir %USERPROFILE%\.config
 rmdir %USERPROFILE%\.config\nvim
+rmdir %USERPROFILE%\.config

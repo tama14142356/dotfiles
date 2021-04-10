@@ -1,0 +1,85 @@
+{
+  "languageserver": {
+    // "clangd": {
+    //   "command": "clangd",
+    //   "args": [
+    //     "--background-index",
+    //     "--header-insertion=never",
+    //     "--pch-storage=memory",
+    //     "--clang-tidy"
+    //   ],
+    //   "rootPatterns": [
+    //     "compile_flags.txt",
+    //     "compile_commands.json",
+    //     ".vim/",
+    //     ".git/",
+    //     ".hg/"
+    //   ],
+    //   "filetypes": [
+    //     "c",
+    //     "cpp",
+    //     "objc",
+    //     "objcpp"
+    //   ]
+    // },
+    "ccls": {
+      "command": "ccls",
+      "filetypes": [
+        "c",
+        "cpp",
+        "cuda",
+        "objc",
+        "objcpp"
+      ],
+      "rootPatterns": [
+        ".ccls-root",
+        "compile_commands.json"
+      ],
+      "initializationOptions": {
+        "cache": {
+          "directory": "C:\\tmp\\ccls-cache"
+        }
+      }
+    },
+    "haskell": {
+      "command": "haskell-language-server-wrapper",
+      "args": [
+        "--lsp"
+      ],
+      "rootPatterns": [
+        "*.cabal",
+        "stack.yaml",
+        "cabal.project",
+        "package.yaml",
+        "hie.yaml"
+      ],
+      "filetypes": [
+        "haskell",
+        "lhaskell"
+      ]
+    }
+  },
+  "suggest.autoTrigger": "always",
+  "suggest.triggerAfterInsertEnter": true,
+  "suggest.snippetIndicator": "►",
+  // https://github.com/neoclide/coc.nvim/issues/746
+  "coc.preferences.formatOnSaveFiletypes": [
+    "python",
+    "rust"
+  ],
+  // for pyenv
+  // python
+  "python.pythonPath": "%USERPROFILE%\\.pyenv\\versions\\startup386\\bin\\python",
+  "python.venvFolders":["envs",".pyenv",".direnv"],
+  "python.venvPath":"%USERPROFILE%\\.pyenv",
+  // formatting
+  "python.formatting.provider": "yapf",
+  "python.formatting.yapfPath": "%USERPROFILE%\\.pyenv\\versions\\startup386\\bin\\yapf",
+  // linter
+  "python.linting.pylintEnabled": false,
+  "python.linting.flake8Enabled": true,
+  "python.linting.flake8Path" : "%USERPROFILE%\\.pyenv\\versions\\startup386\\bin\\flake8",
+  // jedi
+  "python.jediPath": "%USERPROFILE%\\.pyenv\\versions\\startup386\\lib\\python3.8\\site-packages\\jedi",
+  "python.jediEnabled": true
+}

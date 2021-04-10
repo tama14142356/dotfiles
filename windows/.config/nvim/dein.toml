@@ -1,0 +1,72 @@
+[[plugins]]
+repo = 'Shougo\dein.vim'
+
+[[plugins]]
+repo = 'neoclide\coc.nvim'
+rev = 'release'
+merge = 0
+hook_add = '''
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? coc#_select_confirm() :
+      \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+let g:coc_snippet_next = '<tab>'
+
+
+" Remap keys for gotos
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" Remap for rename current word
+nmap <silent>rn <Plug>(coc-rename)
+
+command! -nargs=0 Format :call CocAction('format')
+'''
+
+[[plugins]]
+repo = 'itchyny\lightline.vim'
+on_i = 1
+hook_add = '''
+" START: settings for lightline ------------------------------------------
+if !has('gui_runnig')
+	set t_Co=256
+endif
+let g:lightline = {
+\   'colorscheme': 'wombat',
+\   'separator': {'left': "\ue0b0", 'right': "\ue0b2"},
+\   'subseparator': {'left': "\ue0b1", 'right': "\ue0b3"},
+\   'active': {
+\     'left': [ [ 'mode', 'paste'],
+\               ['gitbranch', 'readonly', 'filename', 'modified'] ]
+\   },
+\   'component_function': {
+\     'gitbranch': 'LightlineGitBranch',
+\   }
+\}
+function! LightlineGitBranch()
+  return get(g:,'coc_git_status','')
+endfunction
+" END: settings for lightline --------------------------------------------
+'''
+
+[[plugins]]
+repo = 'kana\vim-operator-user'
+
+[[plugins]]
+repo = 'rhysd\vim-clang-format'
+
+[[plugins]]
+repo = 'dracula\vim'
+hook_add = '''
+colorscheme dracula
+let g:colorscheme_bg = "dark"
+'''
