@@ -67,19 +67,8 @@
     "python",
     "rust"
   ],
-  // for pyenv
-  // python
-  "python.pythonPath": "~/.pyenv/versions/startup386/bin/python",
-  "python.venvFolders":["envs",".pyenv",".direnv"],
-  "python.venvPath":"~/.pyenv",
-  // formatting
   "python.formatting.provider": "yapf",
-  "python.formatting.yapfPath": "~/.pyenv/versions/startup386/bin/yapf",
-  // linter
   "python.linting.pylintEnabled": false,
   "python.linting.flake8Enabled": true,
-  "python.linting.flake8Path" : "~/.pyenv/versions/startup386/bin/flake8",
-  // jedi
-  "python.jediPath": "~/.pyenv/versions/startup386/lib/python3.8/site-packages/jedi",
   "python.jediEnabled": true
 }
