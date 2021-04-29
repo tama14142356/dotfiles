@@ -41,32 +41,99 @@ syntax enable
 
 "End dein Scripts-------------------------
 
+"補完候補切り替え方法
+"inoremap <silent><expr> <TAB>
+"      \ pumvisible() ? "\<C-n>" :
+"      \ <SID>check_back_space() ? "\<TAB>" :
+"      \ coc#refresh()
+"inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+"
+"function! s:check_back_space() abort
+"  let col = col('.') - 1
+"  return !col || getline('.')[col - 1]  =~# '\s'
+"endfunction
+"
+"inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
+"定義元ジャンプ
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
+
+"UTF-8でファイルを読み込み、ダメだったらShift_JISを試す
+"set fileencodings=utf-8,sjis
+"UTF-8でファイルを書き込む
+"set fileencodings=utf-8
+"クリップボードとVimの無名レジスタを結合する
+"set clipboard+=unnamed
+"コマンドモードでtabを使ってファイル名を補完するときに、1回目は最大共通文字列、次からは順番にファイル名を完全補完する
+"set wildmode=longest,full
+"
+""Ctrl+J,Ctrl+Kでパラグラフ一つ分移動
+nnoremap <C-j> }
+nnoremap <C-k> {
+"「s*」でカーソル下の単語からの置換を途中まで記述
+"nnoremap <expr> s* ':%s/\<' . expand('<cword>') . '\>/'
+" Vim起動時に画面下側にターミナルを立ち上げ、いいぐらいの高さにしておく(resizeの値は適宜調整)
+"if has('vim_starting')
+"    split
+"    wincmd j
+"    resize 15
+"    terminal
+"    wincmd k
+"endif
+
+"エディタとターミナルの操作をCtrl+Tで切り替え
+tnoremap <C-t> <C-\><C-n><C-w>k
+nnoremap <C-t> <C-w>j i
+"ターミナルモード中にEscでターミナルノーマルモードに移行
+tnoremap <Esc> <C-\><C-n>
 
 "コメントはダブルクォーテーション
 
+"シンタックスハイライトをon
+"syntax on
 syntax enable
 filetype plugin indent on
 set ruler
+"VimではUTF-8で文字を表示する
 set encoding=utf-8
 scriptencoding=utf-8
+"行番号を表示
 set number
 set title
+"tabの代わりにスペースを使用
 set expandtab
 set tabstop=2
-set shiftwidth=2
+""tabキーで挿入されるスペースの数
+set shiftwidth=4
+"インデント周りの各種機能で操作されるスペースの数
 set softtabstop=0
 set hlsearch
+"検索結果をハイライト表示(:nohで消す)
 set showmatch
 set cindent
 set showcmd
 set ignorecase
 set smartcase
-set nowrapscan
+"行末まで検索した後行頭に戻って検索
+set wrapscan
+"set nowrapscan
 set noincsearch
 set nobackup
 set backspace=indent,eol,start
 set cursorline
+"中括弧を始めた後などの改行のあと自動的にインデントを入れる
 set smartindent
 "set mouse=a
 inoremap { {}<Left>
