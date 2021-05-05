@@ -60,3 +60,37 @@ $ yarn global add neovim
 ```
 :CocInstall coc-python
 ```
+
+## neovim ビルド（ない場合）
+```
+~/ $ cd .local
+~/.local/ $ git clone git@github.com:neovim/neovim.git
+~/.local $ cd neovim
+~/.local/neovim $ git checkout stable  # for stable version
+~/.local/neovim $ rm -r build/  # if build/ doesn't exist, ignore
+~/.local/neovim $ make CMAKE_EXTRA_FLAGS="-DCMAKE_INSTALL_PREFIX=$HOME/.local/neovim"
+~/.local/neovim $ make install
+```
+
+`.bashrc`に以下を追記
+```sh
+export PATH="$HOME/.local/neovim/bin:$PATH"
+```
+### neovimでのclipboard tool(xclip) ビルド
+[xclipのダウンロード](https://sourceforge.net/projects/xclip/)からダウンロード  
+```
+~/ $ cd .local
+~/ $ ls
+xclip-<version>.tar.gz
+~/.local/ $ tar zxvf xclip-<version>.tar.gz
+~/.local/ $ cd xclip-<version>
+~/.local/xclip-<version> $ ./configure --prefix=$HOME/.local/xclip-<version>
+~/.local/xclip-<version> $ make
+~/.local/xclip-<version> $ make install
+```
+
+`.bashrc`に以下を追記
+```sh
+export PATH="$HOME/.local/xclip-<version>/bin:$PATH"
+export DISPLAY=:0.0
+```
