@@ -53,7 +53,7 @@ $ npm install --save yarn
 $ yarn global add neovim
 ```
 
-## python 補完
+### python 補完
 1. jedi, flake8, blackなどインストール
 1. nvim開く
 1. normalモードで
@@ -61,15 +61,35 @@ $ yarn global add neovim
 :CocInstall coc-python
 ```
 
+### c++ 補完
+1. [ccls buildの方法](https://github.com/MaskRay/ccls/wiki/Build)に従って、以下のようにcclsをインストール
+```
+$ cd .local
+$ git clone --depth=1 --recursive https://github.com/MaskRay/ccls
+$ cd ccls
+$ cmake -H. -BRelease -DCMAKE_BUILD_TYPE=Release -DCMAKE_-DCMAKE_INSTALL_PREFIX=$HOME/.local/neovim
+$ cmake --build Release --target install
+```
+2. nvim 開く
+3. normalモードで
+```
+:CocInstall coc-ccls
+```
+4. 以下を実行(extensionのエラー回避)
+```
+$ cd ~/.config/coc/extensions/node_modules/coc-ccls
+$ ln -s node_modules/ws/lib lib
+```
+
 ## neovim ビルド（ない場合）
 ```
-~/ $ cd .local
-~/.local/ $ git clone git@github.com:neovim/neovim.git
-~/.local $ cd neovim
-~/.local/neovim $ git checkout stable  # for stable version
-~/.local/neovim $ rm -r build/  # if build/ doesn't exist, ignore
-~/.local/neovim $ make CMAKE_EXTRA_FLAGS="-DCMAKE_INSTALL_PREFIX=$HOME/.local/neovim"
-~/.local/neovim $ make install
+$ cd .local
+$ git clone git@github.com:neovim/neovim.git
+$ cd neovim
+$ git checkout stable  # for stable version
+$ rm -r build/  # if build/ doesn't exist, ignore
+$ make CMAKE_EXTRA_FLAGS="-DCMAKE_INSTALL_PREFIX=$HOME/.local/neovim"
+$ make install
 ```
 
 `.bashrc`に以下を追記
@@ -79,14 +99,14 @@ export PATH="$HOME/.local/neovim/bin:$PATH"
 ### neovimでのclipboard tool(xclip) ビルド
 [xclipのダウンロード](https://sourceforge.net/projects/xclip/)からダウンロード  
 ```
-~/ $ cd .local
-~/ $ ls
+$ cd .local
+$ ls
 xclip-<version>.tar.gz
-~/.local/ $ tar zxvf xclip-<version>.tar.gz
-~/.local/ $ cd xclip-<version>
-~/.local/xclip-<version> $ ./configure --prefix=$HOME/.local/xclip-<version>
-~/.local/xclip-<version> $ make
-~/.local/xclip-<version> $ make install
+$ tar zxvf xclip-<version>.tar.gz
+$ cd xclip-<version>
+$ ./configure --prefix=$HOME/.local/xclip-<version>
+$ make
+$ make install
 ```
 
 `.bashrc`に以下を追記
