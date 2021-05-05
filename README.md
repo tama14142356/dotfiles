@@ -37,14 +37,15 @@ $ sh dotfileslinks.sh
 $ npm install --save yarn
 ```
 
-1. ない場合、検索して、yarnから入れてください  
+2. ない場合、検索して、yarnから入れてください  
 参考URL(ubuntu):  
 自分の環境の場合:  
-[yarn install](https://yanor.net/wiki/?Node.js/yarn/yarn%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB+-+Ubuntu)  
-[nodejs, npm install](https://qiita.com/seibe/items/36cef7df85fe2cefa3ea)
+- [yarn install](https://yanor.net/wiki/?Node.js/yarn/yarn%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB+-+Ubuntu)  
+- [nodejs, npm install](https://qiita.com/seibe/items/36cef7df85fe2cefa3ea)
+
 ソースコードからインストール(サーバとかの自分の環境ではない場合):  
-[nodejs, npm binary or source code download](https://nodejs.org/en/download/)
-[nodejs, npm install](https://github.com/nodejs/help/wiki/Installation)
+- [nodejs, npm binary or source code download](https://nodejs.org/en/download/)
+- [nodejs, npm install](https://github.com/nodejs/help/wiki/Installation)
 
 ## coc設定
 1. nodejs用のnvimパッケージインストール
