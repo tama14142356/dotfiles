@@ -67,7 +67,7 @@ $ yarn global add neovim
 $ cd .local
 $ git clone --depth=1 --recursive https://github.com/MaskRay/ccls
 $ cd ccls
-$ cmake -H. -BRelease -DCMAKE_BUILD_TYPE=Release -DCMAKE_-DCMAKE_INSTALL_PREFIX=$HOME/.local/neovim
+$ cmake -H. -BRelease -DCMAKE_BUILD_TYPE=Release -DCMAKE_-DCMAKE_INSTALL_PREFIX=$HOME/.local/
 $ cmake --build Release --target install
 ```
 2. nvim 開く
