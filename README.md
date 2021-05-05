@@ -80,7 +80,10 @@ $ cmake --build Release --target install
 $ cd ~/.config/coc/extensions/node_modules/coc-ccls
 $ ln -s node_modules/ws/lib lib
 ```
-
+5. 実行したい単位のルートに移動してnvimを開いてnormalモードで以下を実行
+```
+:call MakeCompilationDatabase()
+```
 ## neovim ビルド（ない場合）
 ```
 $ cd .local
