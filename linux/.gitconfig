@@ -3,3 +3,4 @@
 	name = tomo
 [core]
 	editor = nvim
+	filemode = false
