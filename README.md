@@ -12,7 +12,7 @@ dein-plugin
 ## シンボリックリンク作成
 
 ```bash
-$ sh dotfileslinks.sh
+$ bash dotfileslinks.sh
 ```
 
 ## dein install
@@ -124,4 +124,39 @@ $ make install
 ```sh
 export PATH="$HOME/.local/xclip-<version>/bin:$PATH"
 export DISPLAY=:0.0
+```
+
+### neovimでのperl ビルド
+`:checkhealth`でperlのバージョンが古いと言われたときにビルドする方法  
+1. perlビルド(参考文献：[perlのビルド/インストール方法](https://qiita.com/skaji/items/3dc443717250e56e0e0e))  
+   1-1. [perl公式サイト](https://www.cpan.org/src/)から最新のperlのソースをダウンロード  
+   1-2. 以下を実行してビルド(例として5.34.0の場合のビルド)  
+   ```
+   $ wget https://www.cpan.org/src/5.0/perl-5.34.0.tar.gz
+   $ tar -xzf perl-5.34.0.tar.gz
+   $ cd perl-5.34.0
+   $ ./Configure -des -Dprefix=$HOME/.local/perl -Dscriptdir=$HOME/.local/perl/bin -des -Dman1dir=none -Dman3dir=none -DDEBUGGING=-g -Duseshrplib -Duseithreads
+   $ make
+   $ make test
+   $ make install
+   ```
+   1-3. `.bashrc`に以下を追記  
+   ```sh
+   export PATH="$HOME/.local/perl/bin:$PATH"
+   ```
+2. cpanmのインストール    
+   2-1. 以下を実行
+   ```
+   $ cpan App::cpanminus
+   ```
+   2-2. `.bashrc`に以下を追記
+   ```sh
+   export PERL_CPANM_OPT="--local-lib=$HOME/.local/lib/perl5"
+   export PATH="$HOME/.local/lib/perl5/bin:$PATH"
+   export PERL5LIB="$HOME/.local/lib/perl5/lib/perl5:$PERL5LIB"
+   ```
+3. `Neovim::Ext`モジュールのインストール  
+以下を実行
+```
+$ cpanm -n Neovim::Ext
 ```
