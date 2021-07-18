@@ -102,6 +102,8 @@ tnoremap <Esc> <C-\><C-n>
 syntax enable
 filetype plugin indent on
 set ruler
+"set nofixeol
+set binary noeol 
 "VimではUTF-8で文字を表示する
 set encoding=utf-8
 scriptencoding=utf-8
