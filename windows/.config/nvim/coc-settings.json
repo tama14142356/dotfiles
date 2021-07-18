@@ -29,7 +29,8 @@
         "cpp",
         "cuda",
         "objc",
-        "objcpp"
+        "objcpp",
+        "cu"
       ],
       "rootPatterns": [
         ".ccls-root",
@@ -37,7 +38,7 @@
       ],
       "initializationOptions": {
         "cache": {
-          "directory": "C:\\tmp\\ccls-cache"
+          "directory": "/tmp/ccls-cache"
         }
       }
     },
@@ -65,11 +66,17 @@
   // https://github.com/neoclide/coc.nvim/issues/746
   "coc.preferences.formatOnSaveFiletypes": [
     "python",
-    "rust"
+    "rust",
+    "c",
+    "cpp",
+    "cuda",
+    "cu",
+    "objc",
+    "objcpp"
   ],
-  // for pyenv
-  // python
   "python.formatting.provider": "yapf",
+  // "python.formatting.provider": "black",
   "python.linting.pylintEnabled": false,
-  "python.linting.flake8Enabled": true
+  "python.linting.flake8Enabled": true,
+  "python.jediEnabled": true
 }

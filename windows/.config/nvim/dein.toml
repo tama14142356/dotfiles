@@ -70,3 +70,9 @@ hook_add = '''
 colorscheme dracula
 let g:colorscheme_bg = "dark"
 '''
+
+[[plugins]]
+repo = 'editorconfig\editorconfig-vim'
+
+[[plugins]]
+repo = 'vim-scripts\PreserveNoEOL'
