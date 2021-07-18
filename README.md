@@ -99,7 +99,7 @@ $ git clone git@github.com:neovim/neovim.git
 $ cd neovim
 $ git checkout stable  # for stable version
 $ rm -r build/  # if build/ doesn't exist, ignore
-$ make CMAKE_EXTRA_FLAGS="-DCMAKE_INSTALL_PREFIX=$HOME/.local/neovim"
+$ make CMAKE_EXTRA_FLAGS="-DCMAKE_INSTALL_PREFIX=$HOME/.local/neovim" CMAKE_BUILD_TYPE=RelWithDebInfo
 $ make install
 ```
 
