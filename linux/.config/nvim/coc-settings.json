@@ -29,7 +29,8 @@
         "cpp",
         "cuda",
         "objc",
-        "objcpp"
+        "objcpp",
+        "cu"
       ],
       "rootPatterns": [
         ".ccls-root",
@@ -69,6 +70,7 @@
     "c",
     "cpp",
     "cuda",
+    "cu",
     "objc",
     "objcpp"
   ],
