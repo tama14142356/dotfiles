@@ -56,10 +56,6 @@ syntax enable
 "inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 "定義元ジャンプ
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 
 function! s:show_documentation()
@@ -110,12 +106,12 @@ set ruler
 set encoding=utf-8
 scriptencoding=utf-8
 "行番号を表示
-set number
+"set number
 set title
 "tabの代わりにスペースを使用
 set expandtab
 set tabstop=2
-""tabキーで挿入されるスペースの数
+"tabキーで挿入されるスペースの数
 set shiftwidth=4
 "インデント周りの各種機能で操作されるスペースの数
 set softtabstop=0
