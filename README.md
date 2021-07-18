@@ -31,13 +31,21 @@ $ sh dotfileslinks.sh
 ```
 
 ## yarn nodejs install
-1. npmがすでにある場合、yarnをインストール
+1. npmがすでにある場合、yarnをインストール  
+   1-a. npmがローカルビルドの場合または管理者権限が使える環境の場合  
+     ```
+     $ npm install -g yarn
+     ```
+   1-b. 管理者権限が使えず、globalにインストールできない場合  
+     ```
+     $ npm install --save yarn
+     ```
+     `.bashrc`に以下を追記  
+     ```sh
+     export PATH="$HOME/node_modules/.bin:$PATH"
+     ```
 
-```
-$ npm install --save yarn
-```
-
-2. ない場合、検索して、yarnから入れてください  
+2. ない場合、検索して、npmから入れてください  
 参考URL(ubuntu):  
 自分の環境の場合:  
 - [yarn install](https://yanor.net/wiki/?Node.js/yarn/yarn%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB+-+Ubuntu)  
