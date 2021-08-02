@@ -5,3 +5,5 @@ mklink %USERPROFILE%\.gitconfig %CD%\.gitconfig
 mklink %USERPROFILE%\.tmux.conf %CD%\.tmux.conf
 mkdir %USERPROFILE%\.config
 mklink /d %USERPROFILE%\.config\nvim %CD%\.config\nvim
+mklink %USERPROFILE%\.vimrc %CD%\.vimrc 
+mklink /d %USERPROFILE%\.vim %CD%\.vim

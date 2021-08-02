@@ -1,6 +1,3 @@
 [user]
 	email = tomo14142356@gmail.com
 	name = tomo
-[core]
-	editor = nvim
-	filemode = false
