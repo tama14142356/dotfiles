@@ -1,5 +1,5 @@
 .config/nvim/snippets
-.vim/.netrwhist
-.config/nvim/.netrwhist
+.netrwhist
 *.snip
 .config/nvim/colors
+bugreport.txt
