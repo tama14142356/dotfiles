@@ -1,19 +1,21 @@
+source <sfile>:h/.vim/essential.vim
+
 "コメントはダブルクォーテーション
 
-syntax enable
-filetype plugin indent on
+"syntax enable
+"filetype plugin indent on
 set ruler
 set encoding=utf-8
 scriptencoding=utf-8
-set number
+"set number
 set title
-set expandtab
-set tabstop=2
-set shiftwidth=2
+"set expandtab
+"set tabstop=2
+"set shiftwidth=2
 set softtabstop=0
-set hlsearch
+"set hlsearch
 set showmatch
-set cindent
+"set cindent
 set showcmd
 set ignorecase
 set smartcase
