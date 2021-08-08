@@ -4,6 +4,7 @@ SCRIPT_DIR=$(
     pwd
 )
 unlink ~/.gitconfig
+unlink ~/.gitterminal
 unlink ~/.config/nvim
 unlink ~/.tmux.conf
 unlink ~/.vimrc
