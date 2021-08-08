@@ -12,7 +12,25 @@ dein-plugin
 ## シンボリックリンク作成
 
 ```bash
-$ bash dotfileslinks.sh
+$ bash linux/dotfileslinks.sh (linux)
+$ bash linux/dotfileslinks_nvim.sh (nvim on linux)
+$ bash linux/dotfileslinks_vim.sh (vim on linux)
+$ windows/dotfileslinks.bat (windows)
+```
+## シンボリックリンク削除
+
+```bash
+$ bash linux/removelinks.sh (linux) 
+$ windows/removelinks.bat (windows)
+```
+
+`.bashrc`内の以下の文字列を削除
+
+```sh
+# terminal setting for git
+if [ -f "$HOME"/.gitterminal/mygit_prompt.sh ]; then
+    source "$HOME"/.gitterminal/mygit_prompt.sh
+fi
 ```
 
 ## dein install
