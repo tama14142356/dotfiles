@@ -7,3 +7,4 @@ rmdir %USERPROFILE%\.config\nvim
 rmdir %USERPROFILE%\.config
 del %USERPROFILE%\.vimrc
 rmdir %USERPROFILE%\.vim
+rmdir %USERPROFILE%\.gitterminal
