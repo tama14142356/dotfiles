@@ -7,3 +7,4 @@ mkdir %USERPROFILE%\.config
 mklink /d %USERPROFILE%\.config\nvim %CD%\.config\nvim
 mklink %USERPROFILE%\.vimrc %CD%\.vimrc 
 mklink /d %USERPROFILE%\.vim %CD%\.vim
+mklink /d %USERPROFILE%\.gitterminal %CD%\.gitterminal
