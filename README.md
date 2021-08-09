@@ -15,7 +15,7 @@ dein-plugin
 $ bash linux/dotfileslinks.sh (linux)
 $ bash linux/dotfileslinks_nvim.sh (nvim on linux)
 $ bash linux/dotfileslinks_vim.sh (vim on linux)
-$ windows/dotfileslinks.bat (windows)
+$ windows/dotfileslinks.bat (windows 管理者権限)
 ```
 ## シンボリックリンク削除
 
