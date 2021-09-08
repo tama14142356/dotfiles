@@ -81,6 +81,6 @@
   "python.linting.flake8Enabled": true,
   // "python.jediEnabled": true,
   // for coc-pyright
-  // "pyright.disableDiagnostics" : true,
-  "python.analysis.typeCheckingMode": "off",
+  "pyright.disableDiagnostics" : true,
+  "python.analysis.typeCheckingMode": "off"
 }
