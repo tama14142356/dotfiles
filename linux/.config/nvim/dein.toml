@@ -4,7 +4,7 @@ repo = 'Shougo/dein.vim'
 [[plugins]]
 repo = 'neoclide/coc.nvim'
 rev = 'release'
-merge = 0
+merged = 0
 hook_add = '''
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? coc#_select_confirm() :
