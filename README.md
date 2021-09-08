@@ -17,6 +17,16 @@ $ bash linux/dotfileslinks_nvim.sh (nvim on linux)
 $ bash linux/dotfileslinks_vim.sh (vim on linux)
 $ windows/dotfileslinks.bat (windows 管理者権限)
 ```
+
+`.bashrc`に以下を追記
+
+```sh
+# terminal setting for git
+if [ -f "$HOME"/.gitterminal/mygit_prompt.sh ]; then
+    source "$HOME"/.gitterminal/mygit_prompt.sh
+fi
+```
+
 ## シンボリックリンク削除
 
 ```bash

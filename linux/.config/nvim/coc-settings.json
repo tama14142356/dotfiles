@@ -74,9 +74,13 @@
     "objc",
     "objcpp"
   ],
+  // for coc-python
   "python.formatting.provider": "yapf",
   // "python.formatting.provider": "black",
   "python.linting.pylintEnabled": false,
   "python.linting.flake8Enabled": true,
-  "python.jediEnabled": true
+  // "python.jediEnabled": true,
+  // for coc-pyright
+  // "pyright.disableDiagnostics" : true,
+  "python.analysis.typeCheckingMode": "off",
 }
