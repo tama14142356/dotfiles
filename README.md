@@ -83,9 +83,12 @@ $ yarn global add neovim
 1. jedi, flake8, blackなどインストール
 1. nvim開く
 1. normalモードで
-```
-:CocInstall coc-python
-```
+
+<s>`:CocInstall coc-python`</s>  
+`:CocInstall coc-pyright`
+
+[2021/09/08追記] [coc-python](https://github.com/neoclide/coc-python)はアーカイブ入りしているので、[coc-pyright](https://github.com/fannheyward/coc-pyright)へ変更  
+参考：[coc-pythonがArchive入りしていることに気がついたのでcoc-jediに変えてみた](https://dev.classmethod.jp/articles/change-to-coc-jedi-from-coc-python/)
 
 ### c++ 補完
 1. [ccls buildの方法](https://github.com/MaskRay/ccls/wiki/Build)に従って、以下のようにcclsをインストール
