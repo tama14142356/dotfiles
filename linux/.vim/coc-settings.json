@@ -1,4 +1,5 @@
 {
+  "coc.preferences.willSaveHandlerTimeout": 5000,
   "languageserver": {
     // "clangd": {
     //   "command": "clangd",
