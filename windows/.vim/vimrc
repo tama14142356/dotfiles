@@ -1,4 +1,5 @@
-source <sfile>:h/.vim/essential.vim
+source $VIMRUNTIME/defaults.vim
+source <sfile>:h\essential.vim
 
 "コメントはダブルクォーテーション
 
@@ -49,7 +50,7 @@ endfunction
 inoremap <silent> <C-[> <ESC>:call ImInActivate()<CR>
 inoremap <silent> <C-c> <ESC>:call ImInActivate()<CR>
 
-autocmd BufNewFile *.js 0r $HOME/.vim/template/javascript.js
-autocmd BufNewFile *.cpp 0r $HOME/.vim/template/cpp.cpp
-autocmd BufNewFile *.c 0r $HOME/.vim/template/cpp.cpp
+autocmd BufNewFile *.js 0r %USERPROFILE%\.vim\template\javascript.js
+autocmd BufNewFile *.cpp 0r %USERPROFILE%\.vim\template\cpp.cpp
+autocmd BufNewFile *.c 0r %USERPROFILE%\.vim\template\cpp.cpp
 "autocmd BufNewFile *.cpp :27
