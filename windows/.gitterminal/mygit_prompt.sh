@@ -16,7 +16,7 @@ if [ -f "$HOME"/.gitterminal/git-prompt.sh ]; then
     GIT_PS1_SHOWUNTRACKEDFILES=
     GIT_PS1_SHOWSTASHSTATE=1
     # ターミナル表示用
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\[\033[36m\]$(__git_ps1)\[\033[00m\]\$ '
+    # PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\[\033[36m\]$(__git_ps1)\[\033[00m\]\$ '
     # PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[01;33m\] \w$(__git_ps1 " (%s)") \n \[\033[01;34m\]\$\[\033[00m\] '
 # else
 #     export PS1='\[\033[01;32m\]\u@\h\[\033[01;33m\] \w \n \[\033[01;34m\]\$\[\033[00m\] '
