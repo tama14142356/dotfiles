@@ -4,20 +4,19 @@ if &compatible
 endif
 
 " Required:
-set runtimepath+=~\.cache\dein\repos\github.com\Shougo\dein.vim
+set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
 
-" Let dein manage dein
 " Required:
-if dein#load_state('~\.cache\dein')
-  call dein#begin('~\.cache\dein')
+if dein#load_state('~/.cache/dein/')
+  call dein#begin('~/.cache/dein/')
 
   " Let dein manage dein
   " Required:
-  "call dein#add('~\.cache\dein\repos\github.com\Shougo\dein.vim')
+  "call dein#add('~/.cache/dein//repos/github.com/Shougo/dein.vim')
 
-  let g:dein_dir = expand('~\.config\nvim')
-  let s:toml = g:dein_dir . '\dein.toml'
-  let s:lazy_toml = g:dein_dir . '\dein_lazy.toml'
+  let g:dein_dir = expand('~/.config/nvim')
+  let s:toml = g:dein_dir . '/dein.toml'
+  let s:lazy_toml = g:dein_dir . '/dein_lazy.toml'
 
   " You can specify revision/branch/tag.
 
@@ -155,12 +154,12 @@ augroup fileTypeIndent
     autocmd BufNewFile,BufRead *.md inoremap $ $$<Left>
 augroup END
 
-autocmd BufNewFile *.js 0r %USERPROFILE%\.vim\template\javascript.js
-"autocmd BufNewFile *.cpp 0r %USERPROFILE%\.vim\template\cpp.cpp
-"autocmd BufNewFile *.c 0r %USERPROFILE%\.vim\template\cpp.cpp
+autocmd BufNewFile *.js 0r $HOME/.vim/template/javascript.js
+"autocmd BufNewFile *.cpp 0r $HOME/.vim/template/cpp.cpp
+"autocmd BufNewFile *.c 0r $HOME/.vim/template/cpp.cpp
 "autocmd BufNewFile *.cpp :27
-"set dictionary=\usr\share\dict\cracklib-small
-"set path+=\usr\include\c++\7.1.1\x86_64-pc-linux-gnu\
+set dictionary=/usr/share/dict/cracklib-small
+set path+=/usr/include/c++/7.1.1/x86_64-pc-linux-gnu/
 
 autocmd BufNewFile,BufRead *.vue set filetype=html
 
@@ -177,7 +176,7 @@ inoremap <silent> <C-c> <ESC>:call ImInActivate()<CR>
 function MakeCompilationDatabase()
   let temp = expand('%:p')
   let dir = expand('%:p:h')
-  echo system('echo ''[{"directory": " ' . dir . '","command": "\usr\bin\c++  ' . temp . ' -std=c++11","file": "' . temp . '"}]'' > compile_commands.json')
+  echo system('echo ''[{"directory": " ' . dir . '","command": "/usr/bin/c++  ' . temp . ' -std=c++11","file": "' . temp . '"}]'' > compile_commands.json')
 endfunction
 
 set hidden

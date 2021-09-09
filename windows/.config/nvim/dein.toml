@@ -1,8 +1,8 @@
 [[plugins]]
-repo = 'Shougo\dein.vim'
+repo = 'Shougo/dein.vim'
 
 [[plugins]]
-repo = 'neoclide\coc.nvim'
+repo = 'neoclide/coc.nvim'
 rev = 'release'
 merged = 0
 hook_add = '''
@@ -33,7 +33,7 @@ command! -nargs=0 Format :call CocAction('format')
 '''
 
 [[plugins]]
-repo = 'itchyny\lightline.vim'
+repo = 'itchyny/lightline.vim'
 on_i = 1
 hook_add = '''
 " START: settings for lightline ------------------------------------------
@@ -59,20 +59,20 @@ endfunction
 '''
 
 [[plugins]]
-repo = 'kana\vim-operator-user'
+repo = 'kana/vim-operator-user'
 
 [[plugins]]
-repo = 'rhysd\vim-clang-format'
+repo = 'rhysd/vim-clang-format'
 
 [[plugins]]
-repo = 'dracula\vim'
+repo = 'dracula/vim'
 hook_add = '''
 colorscheme dracula
 let g:colorscheme_bg = "dark"
 '''
 
 [[plugins]]
-repo = 'editorconfig\editorconfig-vim'
+repo = 'editorconfig/editorconfig-vim'
 
 [[plugins]]
-repo = 'vim-scripts\PreserveNoEOL'
+repo = 'vim-scripts/PreserveNoEOL'

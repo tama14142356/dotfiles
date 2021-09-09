@@ -1,5 +1,5 @@
 [[plugins]]
-repo ='Shougo\defx.nvim'
+repo ='Shougo/defx.nvim'
 on_cmd = 'Defx'
 hook_add = '''
 	nnoremap <silent> <Space>f :<C-u>Defx -listed -resume -buffer-name=tab`tabpagenr()`<CR>
