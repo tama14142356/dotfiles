@@ -6,5 +6,6 @@ del %USERPROFILE%\.tmux.conf
 rmdir %USERPROFILE%\.config\nvim
 rmdir %USERPROFILE%\.config
 rmdir %USERPROFILE%\vimfiles
+rmdir %USERPROFILE%\.vim
 rmdir %USERPROFILE%\.gitterminal
 
