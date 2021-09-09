@@ -18,7 +18,7 @@ if dein#load_state('~/.cache/dein/')
     call dein#add('roxma/vim-hug-neovim-rpc')
   endif
 
-  let g:dein_dir = expand('~/.config/nvim')
+  let g:dein_dir = expand('~/.vim')
   let s:toml = g:dein_dir . '/dein.toml'
   let s:lazy_toml = g:dein_dir . '/dein_lazy.toml'
 
