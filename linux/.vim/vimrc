@@ -1,4 +1,4 @@
-source <sfile>:h/.vim/essential.vim
+source <sfile>:h/essential.vim
 
 "コメントはダブルクォーテーション
 

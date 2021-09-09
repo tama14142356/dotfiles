@@ -1,0 +1,86 @@
+{
+  "languageserver": {
+    // "clangd": {
+    //   "command": "clangd",
+    //   "args": [
+    //     "--background-index",
+    //     "--header-insertion=never",
+    //     "--pch-storage=memory",
+    //     "--clang-tidy"
+    //   ],
+    //   "rootPatterns": [
+    //     "compile_flags.txt",
+    //     "compile_commands.json",
+    //     ".vim/",
+    //     ".git/",
+    //     ".hg/"
+    //   ],
+    //   "filetypes": [
+    //     "c",
+    //     "cpp",
+    //     "objc",
+    //     "objcpp"
+    //   ]
+    // },
+    "ccls": {
+      "command": "ccls",
+      "filetypes": [
+        "c",
+        "cpp",
+        "cuda",
+        "objc",
+        "objcpp",
+        "cu"
+      ],
+      "rootPatterns": [
+        ".ccls-root",
+        "compile_commands.json"
+      ],
+      "initializationOptions": {
+        "cache": {
+          "directory": "/tmp/ccls-cache"
+        }
+      }
+    },
+    "haskell": {
+      "command": "haskell-language-server-wrapper",
+      "args": [
+        "--lsp"
+      ],
+      "rootPatterns": [
+        "*.cabal",
+        "stack.yaml",
+        "cabal.project",
+        "package.yaml",
+        "hie.yaml"
+      ],
+      "filetypes": [
+        "haskell",
+        "lhaskell"
+      ]
+    }
+  },
+  "suggest.autoTrigger": "always",
+  "suggest.triggerAfterInsertEnter": true,
+  "suggest.snippetIndicator": "►",
+  // https://github.com/neoclide/coc.nvim/issues/746
+  "coc.preferences.formatOnSaveFiletypes": [
+    "python",
+    "rust",
+    "c",
+    "cpp",
+    "cuda",
+    "cu",
+    "objc",
+    "objcpp"
+  ],
+  // for coc-python
+  "python.formatting.provider": "yapf",
+  // "python.formatting.provider": "black",
+  "python.linting.pylintEnabled": false,
+  "python.linting.flake8Enabled": true,
+  // "python.jediEnabled": true,
+  // for coc-pyright
+  "pyright.disableDiagnostics" : true,
+  "python.analysis.typeCheckingMode": "off"
+}
