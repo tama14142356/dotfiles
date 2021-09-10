@@ -150,7 +150,7 @@ $ git clone git@github.com:vim/vim.git
 $ cd vim
 $ git checkout v8.2.0  # for version 8.2
 $ rm -r build/  # if build/ doesn't exist, ignore
-$ ./configure --prefix=$HOME/.local/vim --with-x --with-features=huge --enable-multibyte --enable-terminal--enable-rubyinterp --enable-pythoninterp --enable-perlinterp --enable-fontset
+$ ./configure --prefix=$HOME/.local/vim --with-features=huge --disable-selinux --enable-fontset --enable-multibyte --enable-gui=yes --enable-python3interp --enable-gpm --enable-acl --enable-xim --enable-rubyinterp --enable-cscope --with-x --enable-luainterp
 $ make
 $ make install
 ```
