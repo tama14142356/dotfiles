@@ -47,7 +47,7 @@ fi
 1. dein install 方法：  
 [dein install](https://github.com/Shougo/dein.vim)
 
-1. nvim 開く
+1. nvim(or vim) 開く
 1. normalモードで
 ```
 :call dein#install()
