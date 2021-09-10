@@ -84,14 +84,14 @@ fi
 - [nodejs, npm install](https://github.com/nodejs/help/wiki/Installation)
 
 ## coc設定
-1. nodejs用のnvimパッケージインストール
+1. nodejs用のnvimパッケージインストール(neovimのみ)
 ```
 $ yarn global add neovim
 ```
 
 ### python 補完
 1. jedi, flake8, blackなどインストール
-1. nvim開く
+1. nvim(or vim)開く
 1. normalモードで
 
 <s>`:CocInstall coc-python`</s>  
@@ -109,7 +109,7 @@ $ cd ccls
 $ cmake -H. -BRelease -DCMAKE_BUILD_TYPE=Release -DCMAKE_-DCMAKE_INSTALL_PREFIX=$HOME/.local/
 $ cmake --build Release --target install
 ```
-2. nvim 開く
+2. nvim(or vim) 開く
 3. normalモードで
 ```
 :CocInstall coc-ccls
@@ -119,7 +119,7 @@ $ cmake --build Release --target install
 $ cd ~/.config/coc/extensions/node_modules/coc-ccls
 $ ln -s node_modules/ws/lib lib
 ```
-5. 実行したい単位のルートに移動してnvimを開いてnormalモードで以下を実行
+5. 実行したい単位のルートに移動してnvim(or vim)を開いてnormalモードで以下を実行
 ```
 :call MakeCompilationDatabase()
 ```
@@ -138,6 +138,33 @@ $ make install
 ```sh
 export PATH="$HOME/.local/neovim/bin:$PATH"
 ```
+
+参考：
+- [neovim](https://github.com/neovim/neovim)
+- [neovim build type](https://github.com/neovim/neovim/blob/master/README.md#install-from-source)
+
+## vim ビルド（ない場合）
+```
+$ cd .local
+$ git clone git@github.com:vim/vim.git
+$ cd vim
+$ git checkout v8.2.0  # for version 8.2
+$ rm -r build/  # if build/ doesn't exist, ignore
+$ ./configure --prefix=$HOME/.local/vim --with-x --with-features=huge --enable-multibyte --enable-terminal--enable-rubyinterp --enable-pythoninterp --enable-perlinterp --enable-fontset
+$ make
+$ make install
+```
+
+`.bashrc`に以下を追記
+```sh
+export PATH="$HOME/.local/vim/bin:$PATH"
+```
+
+参考: 
+- [vim](https://github.com/vim/vim)
+- [Vim の種類 (Vim family)](https://qiita.com/b4b4r07/items/f7a4a0461e1fc6f436a4)
+- [vim 8.1 クリップボードにコピーできるバイナリをビルドする](https://ytyaru.hatenablog.com/entry/2020/05/22/000000)
+
 ### neovimでのclipboard tool(xclip) ビルド
 [xclipのダウンロード](https://sourceforge.net/projects/xclip/)からダウンロード  
 ```
