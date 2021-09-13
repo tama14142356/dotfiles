@@ -9,6 +9,22 @@ dein-plugin
 1. coc設定
 1. python補完設定
 
+# uninstall手順
+1. deinのインストール先と、cocの拡張機能のインストール先を削除
+   ```
+   $ rm -rf ~/.config/coc
+   $ rm -rf ~/.cache/dein/
+   ```
+   (多分、これでアンインストールできると思う。。試してみたことはない)
+
+1. yarnのパッケージアンインストール  
+   ```
+   $ yarn global remove neovim
+   ```
+   参考：[npmとyarnのコマンド早見表](https://qiita.com/rubytomato@github/items/1696530bb9fd59aa28d8)
+
+1. yarn nodejs, npmをアンインストールするかどうかは状況次第
+
 ## シンボリックリンク作成
 
 ```bash
