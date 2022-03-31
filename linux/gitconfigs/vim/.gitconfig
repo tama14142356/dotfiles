@@ -3,3 +3,5 @@
 	name = tomo
 [core]
   editor = vim
+[pull]
+	rebase = false
