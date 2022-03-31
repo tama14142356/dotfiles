@@ -116,6 +116,7 @@ filetype plugin indent on
 set ruler
 "set nofixeol
 set binary noeol 
+set noeol
 "VimではUTF-8で文字を表示する
 set encoding=utf-8
 scriptencoding=utf-8
@@ -146,6 +147,7 @@ set cursorline
 "中括弧を始めた後などの改行のあと自動的にインデントを入れる
 set smartindent
 "set mouse=a
+"set foldmethod=indent
 inoremap { {}<Left>
 inoremap ( ()<Left>
 inoremap [ []<Left>
