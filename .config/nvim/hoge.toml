@@ -1,0 +1,2 @@
+[[plugins]]
+repo = 'williamboman/nvim-lsp-installer'

@@ -1,0 +1,13 @@
+[[plugins]]
+repo = 'junegunn/fzf'
+build = './install --bin'
+merged = '0'
+
+[[plugins]]
+repo = 'junegunn/fzf.vim'
+on_cmd = [
+    'Files',
+    'GFiles',
+    'Colors',
+    'Ag',
+] # TODO
