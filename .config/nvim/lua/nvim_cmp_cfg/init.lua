@@ -134,6 +134,13 @@ cmp.setup({
       winhighlight = "NormalFloat:CompeDocumentation,FloatBorder:CompeDocumentationBorder",
       scrollbar = "║",
     },
+    completion = {
+      -- border = 'rounded',
+      border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+      -- winhighlight = "NormalFloat:CompeDocumentation,FloatBorder:CompeDocumentationBorder",
+      -- winhighlight = "NormalFloat:NoneBg",
+      winhighlight = 'Normal:CmpPmenu,FloatBorder:CmpPmenuBorder,CursorLine:PmenuSel,Search:None',
+    },
   },
   experimental = {
     ghost_text = true,
@@ -209,100 +216,76 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
--- -- Set up language servers
--- 
--- ---- ccls
--- nvim_lsp['ccls'].setup {
+-- Set up language servers
+
+---- ccls
+nvim_lsp['ccls'].setup {
+  on_attach = on_attach,
+  flags = {
+    debounce_text_changes = 150,
+  },
+  init_options = {
+    cache = {
+      directory = "/tmp/ccls-cache";
+    },
+  },
+  capabilities = capabilities,
+  filetypes = { 'c', 'cpp', 'objc', 'objcpp', 'cuda' },
+  root_dir = function(fname)
+    return util.root_pattern('compile_commands.json', '.ccls', 'compile_flags.txt')(fname)
+      or util.path.dirname(fname)
+  end,
+}
+
+---- clangd (OpenCL)
+nvim_lsp['clangd'].setup {
+  on_attach = on_attach,
+  cmd = {
+    "clangd",
+    "--background-index",
+    "--header-insertion=never",
+    "--pch-storage=memory",
+    "--clang-tidy"
+  },
+  capabilities = capabilities,
+  filetypes = { 'cl' },
+  root_dir = function(fname)
+    return util.root_pattern('compile_commands.json', '.cache', 'compile_flags.txt')(fname)
+      or util.path.dirname(fname)
+  end,
+}
+
+---- cmake-language-server
+nvim_lsp['cmake'].setup{
+  on_attach = on_attach,
+  capabilities = capabilities,
+}
+
+---- efm-langserver
+nvim_lsp['efm'].setup{
+  on_attach = on_attach,
+  filetypes = {'python'},
+}
+
+---- typescript language server
+nvim_lsp['tsserver'].setup{
+  on_attach = on_attach,
+  capabilities = capabilities,
+}
+
+-- ---- deno language server
+-- nvim_lsp['denols'].setup{
 --   on_attach = on_attach,
---   flags = {
---     debounce_text_changes = 150,
---   },
---   init_options = {
---     cache = {
---       directory = "/tmp/ccls-cache";
---     },
---   },
 --   capabilities = capabilities,
---   filetypes = { 'c', 'cpp', 'objc', 'objcpp', 'cuda' },
 --   root_dir = function(fname)
---     return util.root_pattern('compile_commands.json', '.ccls', 'compile_flags.txt')(fname)
---       or util.path.dirname(fname)
+--     return util.root_pattern('deno.json', 'deno.jsonc')(fname)
 --   end,
 -- }
--- 
--- ---- clangd (OpenCL)
--- nvim_lsp['clangd'].setup {
---   on_attach = on_attach,
---   cmd = {
---     "clangd",
---     "--background-index",
---     "--header-insertion=never",
---     "--pch-storage=memory",
---     "--clang-tidy"
---   },
---   capabilities = capabilities,
---   filetypes = { 'cl' },
---   root_dir = function(fname)
---     return util.root_pattern('compile_commands.json', '.cache', 'compile_flags.txt')(fname)
---       or util.path.dirname(fname)
---   end,
--- }
--- 
--- ---- cmake-language-server
--- nvim_lsp['cmake'].setup{
---   on_attach = on_attach,
---   capabilities = capabilities,
--- }
--- 
--- ---- efm-langserver
--- nvim_lsp['efm'].setup{
---   on_attach = on_attach,
---   filetypes = {'python'},
--- }
--- 
--- ---- typescript language server
--- nvim_lsp['tsserver'].setup{
---   on_attach = on_attach,
---   capabilities = capabilities,
--- }
--- 
--- -- ---- deno language server
--- -- nvim_lsp['denols'].setup{
--- --   on_attach = on_attach,
--- --   capabilities = capabilities,
--- --   root_dir = function(fname)
--- --     return util.root_pattern('deno.json', 'deno.jsonc')(fname)
--- --   end,
--- -- }
--- 
--- ---- python language server
--- nvim_lsp['pyright'].setup{
---   on_attach = on_attach,
---   capabilities = capabilities,
--- }
--- 
-local lsp_installer = require("nvim-lsp-installer")
 
--- Register a handler that will be called for each installed server when it's ready (i.e. when installation is finished
--- or if the server is already installed).
-lsp_installer.on_server_ready(function(server)
-    local opts = {}
-
-    -- (optional) Customize the options passed to the server
-    -- if server.name == "tsserver" then
-    --     opts.root_dir = function() ... end
-    -- end
-    if server.name == "efm" then
-      opts.filetypes = {'python'}
-    end
-
-    opts.on_attach = on_attach
-    opts.capabilities = capabilities
-
-    -- This setup() function will take the provided server configuration and decorate it with the necessary properties
-    -- before passing it onwards to lspconfig.
-    -- Refer to https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
-    server:setup(opts)
-end)
+---- python language server
+nvim_lsp['pyright'].setup{
+  on_attach = on_attach,
+  capabilities = capabilities,
+}
 
 
