@@ -1,6 +1,9 @@
 #! /bin/bash
 unlink ~/.gitconfig
-unlink ~/.gitterminal
+unlink ~/.gitterminal/mygit_prompt.sh
+unlink ~/.gitterminal/git-prompt.sh
+unlink ~/.gitterminal/git-completion.bash
+rmdir ~/.gitterminal
 unlink ~/.config/nvim
 unlink ~/.tmux.conf
 unlink ~/.vim

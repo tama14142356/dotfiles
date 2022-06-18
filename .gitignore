@@ -3,3 +3,4 @@
 *.snip
 .config/nvim/colors
 bugreport.txt
+*.log

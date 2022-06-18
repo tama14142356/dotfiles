@@ -27,6 +27,35 @@ dein-plugin
 
 ## シンボリックリンク作成
 
+### git関連のファイルについて
+
+- gitのバージョンが1.\*のとき
+
+以下を実行して、`git-prompt.sh`と`git-completion.bash`を探す
+```bash
+$ bash scripts/find_git_scripts.sh
+```
+
+例えば以下のようなパスが得られた場合、以下のようにシンボリックリンクを作成
+```bash
+$ cat scripts/git-prompt_path.log
+/usr/share/doc/git-1.8.3.1/contrib/completion/git-prompt.sh
+/usr/share/doc/git-1.8.3.1/contrib/completion/git-completion.bash
+/data/tmp/share/git-completion.bash
+$ cat scripts/git-prompt_path.log | head -2 > scripts/git-prompt_path_list.txt
+$ bash scripts/ln_system_git_prompts.sh
+```
+
+<!--
+$ ln -s /usr/share/doc/git-1.8.3.1/contrib/completion/git-prompt.sh ~/.gitterminal/git-prompt.sh
+$ ln -s /usr/share/doc/git-1.8.3.1/contrib/completion/git-completion.bash ~/.gitterminal/git-completion.bash
+```
+-->
+
+- gitのバージョンが2+のとき
+上記の操作を行ってもいいが、しなくても上手く動作する
+
+### そのほかのファイルについて
 ```bash
 $ bash linux/dotfileslinks.sh (linux)
 $ bash linux/dotfileslinks_nvim.sh (nvim on linux)
