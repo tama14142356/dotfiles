@@ -20,8 +20,8 @@ else
     do
         filename=$(basename "$git_prompt")
         abs_git_prompt_path=$(
-            cd "$(dirname "$git_prompt")" || exit 1
-	    pwd
+            cd "$(dirname "$git_prompt")" || exit
+            pwd
         )
         ln -s "$abs_git_prompt_path/$filename" "$HOME/.gitterminal/$filename"
     done
