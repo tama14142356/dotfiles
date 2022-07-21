@@ -27,3 +27,8 @@ trim_trailing_whitespace = false
 [{Makefile,*.mk}]
 tab_width = 4
 indent_style = tab
+
+[{*.bat}]
+indent_size = 4
+indent_style = space
+end_of_line = crlf
