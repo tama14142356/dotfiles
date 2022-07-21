@@ -8,5 +8,7 @@ rmdir %USERPROFILE%\AppData\Local\nvim
 rmdir %USERPROFILE%\.config\nvim
 @REM rmdir %USERPROFILE%\.config
 rmdir %USERPROFILE%\vimfiles
-rmdir %USERPROFILE%\.vim
+del %USERPROFILE%\.gitterminal\git-prompt.sh
+del %USERPROFILE%\.gitterminal\git-completion.bash
+del %USERPROFILE%\.gitterminal\mygit_prompt.sh
 rmdir %USERPROFILE%\.gitterminal

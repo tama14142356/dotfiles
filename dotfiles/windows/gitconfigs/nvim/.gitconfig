@@ -1,0 +1,14 @@
+[user]
+	email = tomo14142356@gmail.com
+	name = tomo
+[core]
+  autocrlf = false
+  editor = nvim
+[pull]
+	rebase = false
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+[push]
+	default = simple
