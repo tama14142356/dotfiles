@@ -6,7 +6,6 @@ del %USERPROFILE%\.tmux.conf
 del %USERPROFILE%\AppData\Local\nvim\init.vim
 rmdir %USERPROFILE%\AppData\Local\nvim
 rmdir %USERPROFILE%\.config\nvim
-@REM rmdir %USERPROFILE%\.config
 rmdir %USERPROFILE%\vimfiles
 del %USERPROFILE%\.gitterminal\git-prompt.sh
 del %USERPROFILE%\.gitterminal\git-completion.bash
