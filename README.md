@@ -57,10 +57,10 @@ $ ln -s /usr/share/doc/git-1.8.3.1/contrib/completion/git-completion.bash ~/.git
 
 ### そのほかのファイルについて
 ```bash
-$ bash linux/dotfileslinks.sh (linux)
-$ bash linux/dotfileslinks_nvim.sh (nvim on linux)
-$ bash linux/dotfileslinks_vim.sh (vim on linux)
-$ windows/dotfileslinks.bat (windows 管理者権限)
+$ bash dotfiles/linux/dotfileslinks.sh (linux)
+$ bash dotfiles/linux/dotfileslinks_nvim.sh (nvim on linux)
+$ bash dotfiles/linux/dotfileslinks_vim.sh (vim on linux)
+$ dotfiles/windows/dotfileslinks.bat (windows 管理者権限)
 ```
 
 `.bashrc`に以下を追記
@@ -75,8 +75,8 @@ fi
 ## シンボリックリンク削除
 
 ```bash
-$ bash linux/removelinks.sh (linux) 
-$ windows/removelinks.bat (windows)
+$ bash dotfiles/linux/removelinks.sh (linux) 
+$ dotfiles/windows/removelinks.bat (windows)
 ```
 
 `.bashrc`内の以下の文字列を削除
@@ -226,7 +226,7 @@ $ make install
 `.bashrc`に以下を追記
 ```sh
 export PATH="$HOME/.local/xclip-<version>/bin:$PATH"
-export DISPLAY=:0.0
+export DISPLAY=:0.0 (上手くいかない場合のみ、むしろ書かないほうがいいこともある)
 ```
 
 ### neovimでのperl ビルド
