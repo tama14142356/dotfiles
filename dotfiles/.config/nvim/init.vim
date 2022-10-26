@@ -114,9 +114,9 @@ tnoremap <Esc> <C-\><C-n>
 syntax enable
 filetype plugin indent on
 set ruler
-"set nofixeol
-set binary noeol 
-set noeol
+set nofixeol
+"set binary noeol
+"set noeol
 "VimではUTF-8で文字を表示する
 set encoding=utf-8
 scriptencoding=utf-8
@@ -148,6 +148,40 @@ set cursorline
 set smartindent
 "set mouse=a
 "set foldmethod=indent
+
+set list
+set listchars=tab:>-,space:.,eol:$
+" hi NonText    ctermfg=21   guifg=#0000ff
+" hi SpecialKey    ctermfg=21   guifg=#0000ff
+" hi NonText    ctermfg=17   guifg=#00005f
+" hi SpecialKey    ctermfg=17   guifg=#00005f
+" hi NonText    ctermfg=16   guifg=#000000
+" hi SpecialKey    ctermfg=16   guifg=#000000
+" hi NonText    ctermbg=NONE ctermfg=59 guibg=NONE guifg=NONE
+" hi SpecialKey ctermbg=NONE ctermfg=59 guibg=NONE guifg=NONE
+
+if has("syntax")
+    syntax on
+
+    " PODバグ対策
+    syn sync fromstart
+
+    function! ActivateInvisibleIndicator()
+        " 下の行の"　"は全角スペース
+        syntax match InvisibleJISX0208Space "　" display containedin=ALL
+        highlight InvisibleJISX0208Space term=underline ctermbg=Blue guibg=darkgray gui=underline
+        "syntax match InvisibleTrailedSpace "[ \t]\+$" display containedin=ALL
+        "highlight InvisibleTrailedSpace term=underline ctermbg=Red guibg=NONE gui=undercurl guisp=darkorange
+        "syntax match InvisibleTab "\t" display containedin=ALL
+        "highlight InvisibleTab term=underline ctermbg=white gui=undercurl guisp=darkslategray
+    endfunction
+
+    augroup invisible
+        autocmd! invisible
+        autocmd BufNew,BufRead * call ActivateInvisibleIndicator()
+    augroup END
+endif
+
 inoremap { {}<Left>
 inoremap ( ()<Left>
 inoremap [ []<Left>
